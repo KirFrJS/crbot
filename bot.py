@@ -174,7 +174,7 @@ async def commds(ctx):
     )
     await ctx.send(embed=embed)
 
-@bot.command()
+@crusty.command()
 @commands.has_permissions(administrator=True)
 async def say(ctx, message=None)
     await ctx.send(message)
