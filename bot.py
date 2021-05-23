@@ -173,6 +173,11 @@ async def commds(ctx):
     )
     await ctx.send(embed=embed)
 
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def say(ctx, message=None)
+    await ctx.send(message)
+
 token = os.environ.get('BOT_TOKEN')
 
 crusty.run(str(token))
