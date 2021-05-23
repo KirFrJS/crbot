@@ -173,12 +173,7 @@ async def commds(ctx):
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
     await ctx.send(embed=embed)
-
-@crusty.command()
-@commands.has_permissions(administrator=True)
-async def say(ctx, message=None)
-    await ctx.send(message)
-
+    
 token = os.environ.get('BOT_TOKEN')
 
 crusty.run(str(token))
