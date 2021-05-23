@@ -168,6 +168,7 @@ async def commds(ctx):
 **Ban** - `забанить юзера.`
 **Kick** - `выгнать юзера.`
 **User** - `информация о пользователе.`
+**Say** - `написать что-нибудь от имени бота.`
 **[Поддержать проект(премиум)](https://www.donationalerts.com/r/frame11)**''',
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
