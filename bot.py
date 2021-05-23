@@ -174,3 +174,5 @@ async def commds(ctx):
     await ctx.send(embed=embed)
 
 token = os.environ.get('BOT_TOKEN')
+
+crusty.run(str(token))
