@@ -210,8 +210,8 @@ async def start(ctx):
     STOP_CHANNEL = 0
 
 @slash.slash(name="test")
-async def _test(ctx: SlashContext):
-    embed = discord.Embed(title="embed test")
+async def hi(ctx: SlashContext):
+    embed = discord.Embed(title="Тестовая команда")
     await ctx.send(content="test", embeds=[embed])
 
 token = os.environ.get('BOT_TOKEN')
