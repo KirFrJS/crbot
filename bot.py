@@ -16,7 +16,7 @@ async def clear( ctx, amount : int):
     await ctx.send(embed = discord.Embed(description = f':white_check_mark: Удалено {amount} сообщений(я)'))
 
 @crusty.event
-async def on_ready():
+async def on_server_join(server):
     activity = discord.Game(name="cr!help | {len(guilds)} серверов.", type=3)
     await crusty.change_presence(status=discord.Status.idle, activity=activity)
 
