@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
 import os
+import json
 
-crusty = commands.Bot(command_prefix='cr!')
+crusty = commands.Bot(command_prefix='+')
 
 @crusty.command()
 async def hello(ctx):
@@ -16,7 +17,7 @@ async def clear( ctx, amount : int):
 
 @crusty.event
 async def on_ready():
-    activity = discord.Game(name="cr!commds | 💛 discord.gg/NXskTnDTMb", type=3)
+    activity = discord.Game(name="тестирование бота | .gg/NXskTnDTMb", type=3)
     await crusty.change_presence(status=discord.Status.idle, activity=activity)
 
 @crusty.command()
@@ -159,20 +160,45 @@ async def kick(ctx, member: discord.Member, reason):
 @crusty.command()
 async def commds(ctx):
     embed = discord.Embed(
-        title = '**Список команд**',
-        description = '''Системный префикс `cr!`
-**Clear** - `очистка сообщений.`
-**Info** - `информация о боте.`
-**Avatar** - `отобразить аватарку юзера.`
-**Serverinfo** - `информация о сервере.`
-**Ban** - `забанить юзера.`
-**Kick** - `выгнать юзера.`
-**User** - `информация о пользователе.`
-**[Поддержать проект(премиум)](https://www.donationalerts.com/r/frame11)**''',
+        title = 'Все команды бота:',
+        description = '''**Привет, я бот Crusty. Вот все мои команды**
+
+
+
+**Модерирование**
+`ban`, `kick`, `clear`, `say`.
+
+
+
+**Утилиты**
+`clear`, `info`, `serverinfo`, `avatar`.
+
+
+**Системные команды**
+
+`say`, `clear`.
+
+*Команды в доработке...*
+
+**[Поддержать(Донат)](https://www.donationalerts.com/r/frame11)''',
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
     await ctx.send(embed=embed)
     
+@crusty.command()
+async def say(ctx, *, question):
+    await ctx.message.delete()
+    await ctx.send(f'{question}')
+
+@crusty.command(name='dm',pass_context=True)
+async def dm(ctx, *argument):
+    #creating invite link
+    invitelink = await ctx.channel.create_invite(max_uses=1,unique=True)
+    #dming it to the person
+    await ctx.author.send(invitelink)
+
+
+
 token = os.environ.get('BOT_TOKEN')
 
 crusty.run(str(token))
