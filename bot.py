@@ -3,8 +3,9 @@ from discord.ext import commands
 import os
 import json
 
-crusty = commands.Bot(command_prefix='cr!')
+crusty = commands.Bot(command_prefix='?')
 crusty.remove_command('help')
+
 @crusty.command()
 async def hello(ctx):
   await ctx.send('Привет!')
@@ -17,7 +18,7 @@ async def clear( ctx, amount : int):
 
 @crusty.event
 async def on_ready():
-    activity = discord.Game(name="cr!help | разработка слеш-команд", type=3)
+    activity = discord.Game(name="?help | разработка слеш-команд", type=3)
     await crusty.change_presence(status=discord.Status.online, activity=activity)
 
 @crusty.command()
@@ -31,7 +32,7 @@ async def info(ctx):
 ЯП: Python <:python:845935931030372372>
 Python3.9 Web
 DiscordPY19.3.1
-Префикс: `cr!` 
+Префикс: `?` 
 Алиасы: `10` (cr!aliases в разработке)''',
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
