@@ -209,6 +209,11 @@ async def start(ctx):
     global STOP_CHANNEL
     STOP_CHANNEL = 0
 
+@slash.slash(name="test")
+async def _test(ctx: SlashContext):
+    embed = discord.Embed(title="embed test")
+    await ctx.send(content="test", embeds=[embed])
+
 token = os.environ.get('BOT_TOKEN')
 
 crusty.run(str(token))
