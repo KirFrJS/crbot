@@ -197,7 +197,11 @@ async def dm(ctx, *argument):
     #dming it to the person
     await ctx.author.send(invitelink)
 
-
+@SlashCommand.slash(self=slash, description="это всего лишь тестовая команда, ничего больше")
+async def hi(ctx):
+    emb = discord.Embed(title=f'Слэш-команда', description=f'{ctx.author.mention} Привет!', color=0x00ff00)
+    await ctx.send(embed=emb)
+    print(f'[Logs:info] {ctx.author} вызвал команду /cmd')
 
 token = os.environ.get('BOT_TOKEN')
 
