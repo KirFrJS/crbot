@@ -166,7 +166,7 @@ async def help(ctx):
 
 
 **Модерирование**
-`ban`, `kick`, `clear`, `say`.
+`ban`, `kick`, `clear`, `say`, `start`, `stop`.
 
 
 
@@ -176,7 +176,7 @@ async def help(ctx):
 
 **Системные команды**
 
-`say`, `clear`.
+`say`, `clear`, `start`, `stop`.
 
 *Команды в доработке...*
 
@@ -197,11 +197,17 @@ async def dm(ctx, *argument):
     #dming it to the person
     await ctx.author.send(invitelink)
 
-@SlashCommand.slash(self=slash, description="это всего лишь тестовая команда, ничего больше")
-async def hi(ctx):
-    emb = discord.Embed(title=f'Слэш-команда', description=f'{ctx.author.mention} Привет!', color=0x00ff00)
-    await ctx.send(embed=emb)
-    print(f'[Logs:info] {ctx.author} вызвал команду /cmd')
+@crusty.command()
+@commands.is_owner()
+async def stop(ctx):
+    global STOP_CHANNEL
+    STOP_CHANNEL = 1
+
+@crusty.command()
+@commands.is_owner()
+async def start(ctx):
+    global STOP_CHANNEL
+    STOP_CHANNEL = 0
 
 token = os.environ.get('BOT_TOKEN')
 
