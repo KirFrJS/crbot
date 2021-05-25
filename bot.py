@@ -18,7 +18,7 @@ async def clear( ctx, amount : int):
 @crusty.event
 async def on_server_join(server):
     activity = discord.Game(name="cr!help | {len(guilds)} серверов.", type=3)
-    await crusty.change_presence(status=discord.Status.idle, activity=activity)
+    await crusty.change_presence(status=discord.Status.online, activity=activity)
 
 @crusty.command()
 async def info(ctx):
