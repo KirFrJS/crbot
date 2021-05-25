@@ -211,8 +211,14 @@ async def stop(ctx):
 async def start(ctx):
     global STOP_CHANNEL
     STOP_CHANNEL = 0
+    
+    async def on_message(self, message):
+        # don't respond to ourselves
+        if message.author == self.user:
+            return
 
-
+        if message.content == 'ку':
+            await message.channel.send('Ку ку :D')
 
 token = os.environ.get('BOT_TOKEN')
 
