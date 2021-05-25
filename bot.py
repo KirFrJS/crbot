@@ -187,9 +187,11 @@ async def help(ctx):
     await ctx.send(embed=embed)
     
 @crusty.command()
-async def say(ctx, *, question):
-    await ctx.message.delete()
-    await ctx.send(f'{question}')
+async def say(ctx, *, message):
+    try:
+        await ctx.send(message)
+    except:
+        await ctx.send("Please Give Some Message!")
 
 @crusty.command(name='dm',pass_context=True)
 async def dm(ctx, *argument):
@@ -210,10 +212,7 @@ async def start(ctx):
     global STOP_CHANNEL
     STOP_CHANNEL = 0
 
-@slash.slash(name="test")
-async def hi(ctx: SlashContext):
-    embed = discord.Embed(title="Тестовая команда")
-    await ctx.send(content="test", embeds=[embed])
+
 
 token = os.environ.get('BOT_TOKEN')
 
