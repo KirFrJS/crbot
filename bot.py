@@ -3,7 +3,7 @@ from discord.ext import commands
 import os
 import json
 
-crusty = commands.Bot(command_prefix='+')
+crusty = commands.Bot(command_prefix='cr!')
 
 @crusty.command()
 async def hello(ctx):
