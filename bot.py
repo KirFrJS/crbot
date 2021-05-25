@@ -17,7 +17,7 @@ async def clear( ctx, amount : int):
 
 @crusty.event
 async def on_ready():
-    activity = discord.Game(name="тестирование бота | .gg/NXskTnDTMb", type=3)
+    activity = discord.Game(name="cr!help | {len(guilds)} серверов.", type=3)
     await crusty.change_presence(status=discord.Status.idle, activity=activity)
 
 @crusty.command()
