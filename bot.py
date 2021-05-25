@@ -4,7 +4,7 @@ import os
 import json
 
 crusty = commands.Bot(command_prefix='cr!')
-
+crusty.remove_command('help')
 @crusty.command()
 async def hello(ctx):
   await ctx.send('Привет!')
@@ -17,7 +17,7 @@ async def clear( ctx, amount : int):
 
 @crusty.event
 async def on_ready():
-    activity = discord.Watching(name="cr!help | разработка слеш-команд", type=3)
+    activity = discord.Game(name="cr!help | разработка слеш-команд", type=3)
     await crusty.change_presence(status=discord.Status.online, activity=activity)
 
 @crusty.command()
