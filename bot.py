@@ -158,7 +158,7 @@ async def kick(ctx, member: discord.Member, reason):
  await member.kick(reason=f'{ctx.author} Выгнал {member}')
 
 @crusty.command()
-async def commds(ctx):
+async def help(ctx):
     embed = discord.Embed(
         title = 'Все команды бота:',
         description = '''**Привет, я бот Crusty. Вот все мои команды**
