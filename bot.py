@@ -36,6 +36,7 @@ DiscordPY19.3.1
 Алиасы: `4` (cr!aliases в разработке)''',
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
+ embed.set_footer(text="Information requested by: {}".format(ctx.author.display_name))
     await ctx.send(embed=embed)
 
 @crusty.command()
