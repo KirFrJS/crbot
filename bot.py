@@ -213,8 +213,21 @@ async def stop(ctx):
 async def start(ctx):
     global STOP_CHANNEL
     STOP_CHANNEL = 0
-    
-
+   
+@crusty.command()
+async def timer(ctx):
+  await ctx.send("1")
+  await asyncio.sleep(1)
+  await message.edit(content="2")
+  await message.edit(content="3")
+  await message.edit(content="4")
+  await message.edit(content="5")
+  await message.edit(content="6")
+  await message.edit(content="7")
+  await message.edit(content="8")
+  await message.edit(content="9")
+  await message.edit(content="10")
+  
 token = os.environ.get('BOT_TOKEN')
 
 crusty.run(str(token))
