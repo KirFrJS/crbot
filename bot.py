@@ -185,7 +185,8 @@ async def help(ctx):
         colour = discord.Colour.from_rgb(106, 192, 245)
     )
     await ctx.send(embed=embed)
-    
+    await ctx.message.delete()
+   
 @crusty.command()
 async def say(ctx, *, message):
     try:
