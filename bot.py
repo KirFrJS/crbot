@@ -214,9 +214,14 @@ async def start(ctx):
     STOP_CHANNEL = 0
     
 @crusty.command()
-async def test(ctx):
-    embed = discord.Embed(color = 0xff9900, title = 'Помощь')
-    await ctx.send( embed = embed )
+async def dramma(ctx):
+    embed = discord.Embed(
+        title = 'Рабочее окружение.',
+        description = 'Ее сука, е.',
+        colour = discord.Colour.from_rgb(106, 192, 245)
+        emb.add_field(name="Проверка")
+    )
+    await ctx.send(embed=embed)
 
 token = os.environ.get('BOT_TOKEN')
 
