@@ -24,12 +24,12 @@ async def on_ready():
 @crusty.command()
 async def info(ctx):
     embed = discord.Embed(
-        title = '**Информация о боте. <:discord_bot_dev:845942679904845854>**',
+        title = '**Информация о боте. <:4228_discord_bot_dev:847116952529928202>**',
         description = '''Название бота: **Crusty**
-Хостинг: **Heroku** <:heroku:845934460855386123>
+Хостинг: **Heroku** <:873120:847116953927286814> 
 Пинг: **В разработке...**
 Сокет: **18ms**
-ЯП: Python <:python:845935931030372372>
+ЯП: Python <:python:847116952152965133> 
 Python3.9 Web
 DiscordPY19.3.1
 Префикс: `c!` 
