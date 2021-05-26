@@ -213,7 +213,7 @@ async def start(ctx):
     global STOP_CHANNEL
     STOP_CHANNEL = 0
     
-@client.command()
+@crusty.command()
 async def test(ctx):
     embed = discord.Embed(color = 0xff9900, title = 'Помощь')
     await ctx.send( embed = embed )
