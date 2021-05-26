@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-import async
+import asyncio
 
 crusty = commands.Bot(command_prefix=',')
 crusty.remove_command('help')
